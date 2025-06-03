@@ -1,6 +1,6 @@
 # vacant_lot
 
-# # 20250603
+## 20250603：提出結果は0.39
 bboxは幅・高さが両方20px超のものだけ残し、それ以下の小さいものを削除
 cfg.SOLVER.IMS_PER_BATCH = 8
 cfg.SOLVER.BASE_LR = 0.00025
@@ -18,5 +18,3 @@ cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.3 #閾値
 cfg.MODEL.ROI_HEADS.NMS_THRESH_TEST = 0.3 #NMS IoU
 
 segmentationは神村さんの初期ファイル
-
-# # 提出結果は0.39
