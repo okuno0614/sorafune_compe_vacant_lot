@@ -17,4 +17,9 @@ cfg.SOLVER.GAMMA = 0.1
 cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.3 #閾値
 cfg.MODEL.ROI_HEADS.NMS_THRESH_TEST = 0.3 #NMS IoU
 
-segmentationは神村さんの初期ファイル
+- segmentation_v1
+  - 学習データを7:3にランダム分割して、7割で学習した結果
+  - モデルはDeep Lab v3を利用
+  - サンプルのbboxと合わせて提出した際のスコアは0.0055596
+  - ※学習、推論時の画像リサイズを戻し忘れているため、スコアは低い
+  - ※サンプルbbox,segmentationでの提出スコアは0.0055432
