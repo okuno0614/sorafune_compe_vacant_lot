@@ -1,21 +1,11 @@
 # vacant_lot
 
-## 20250603：提出結果は0.39
-bboxは幅・高さが両方20px超のものだけ残し、それ以下の小さいものを削除
-cfg.SOLVER.IMS_PER_BATCH = 8
-cfg.SOLVER.BASE_LR = 0.00025
-cfg.SOLVER.MAX_ITER = 3000
-cfg.MODEL.ROI_HEADS.BATCH_SIZE_PER_IMAGE = 128
-cfg.MODEL.ANCHOR_GENERATOR.SIZES = [[16],[32], [64], [128], [256]] 
-cfg.MODEL.ANCHOR_GENERATOR.ASPECT_RATIOS = [[0.5, 1.0, 2.0]] 
-cfg.TEST.EVAL_PERIOD = 300
-cfg.SOLVER.WARMUP_ITERS = 300
-cfg.SOLVER.WARMUP_METHOD = "linear"
-cfg.SOLVER.WARMUP_FACTOR = 0.1
-cfg.SOLVER.STEPS = (2000, 2600)
-cfg.SOLVER.GAMMA = 0.1 
-cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.3 #閾値
-cfg.MODEL.ROI_HEADS.NMS_THRESH_TEST = 0.3 #NMS IoU
+## 20250603 bbox_v1,segmentation_v1：提出結果は0.39
+- bbox_v1
+  - bboxは幅・高さが両方20px超のものだけ残し、それ以下の小さいものを削除
+  - モデルはdetectron2のfaster r-cnn
+  - バッチ：8、学習率：0.00025、イテレーション：3000、ウォームアップ：300、閾値：0.3、NMS：0.3
+
 
 - segmentation_v1
   - 学習データを7:3にランダム分割して、7割で学習した結果
